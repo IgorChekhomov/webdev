@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-технологии</title>
+    <link rel="stylesheet" href="/talk.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Suez+One" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <span>O D O</span>
+        </div>
+
+        <div id="about">
+            <a href="index.html" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="index.html" title="Контакты" onclick="slowScroll('#main')">Контакты</a>
+            <a href="items.html" title="Витрины" onclick="slowScroll('#main')">Витрины</a>
+            <a href="#" title="Нестандарт" onclick="slowScroll('#main')">Нестандарт</a>
+
+        </div>
+
+    </header>
+
+    <div id="top">
+
+        <h1>Готовы к нестандартным проектам</h1>
+        <h3>вместе с заводом Финист</h3>
+    </div>
+
+
+    <div id="faq">
+        <h2>14 лет сотрудничества</h2>
+        <div>
+            <span class="title">Возможности</span><br>
+            <p>Изготавливают на заказ, даже по фото. Не каждый будет работать в таком "контакте" с клиентом.</p>
+        </div>
+        <div>
+            <span class="title">Гибкость</span><br>
+            <p>Готовы к изменениям в проекте, предлагают свои варианты и идеи.</p>
+        </div>
+        <div>
+            <span class="title">Гарантии</span><br>
+            <p>Знают как безопасно упаковывать и доставлять изделия.</p>
+            <p>Груз застрахован.</p>
+        </div>
+    </div>
+
+
+    <div id="questions">
+        <center>
+            <h5>Остались вопросы?</h5>
+            <h2>Проконсультируем</h2>
+        </center>
+        <form id='form_input'>
+            <label for="name">Имя <span>*</span></label><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name" required pattern=^[А-Яа-яЁё\s]+$><br>
+            <label for="phone">Телефон <span>*</span></label><br>
+            <input type="phone" placeholder="Введите номер телефона" name="phone" id="phone"><br>
+            <label for="message">Ваш вопрос <span>*</span></label><br>
+            <textarea placeholder="Что вас интересует" name="message" id="message"></textarea><br>
+            <button>Отправить</button>
+        </form>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate
+                ({
+                    scrollTop: $(id).offset().top
+                }, 500);
+
+        }
+
+
+        $(document).on('scroll', function () {
+            if ($(window).scrollTop() === 0)
+                $('header').removeClass('fixed')
+            else
+                $('header').attr('class', 'fixed');
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

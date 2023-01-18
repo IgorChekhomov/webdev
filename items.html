@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Веб-технологии</title>
+    <link rel="stylesheet" href="/items.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Suez+One" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <span>O D O</span>
+        </div>
+
+        <div id="about">
+            <a href="index.html" title="О нас" onclick="slowScroll('#main')">О нас</a>
+            <a href="index.html" title="Контакты" onclick="slowScroll('#main')">Контакты</a>
+            <a href="items.html" title="Витрины" onclick="slowScroll('#main')">Витрины</a>
+            <a href="talk.html" title="Нестандарт" onclick="slowScroll('#main')">Нестандарт</a>
+
+        </div>
+
+    </header>
+
+    <div id="top">
+        
+        <h1>Большой выбор</h1>
+        <h3>вместе с заводом Финист</h3>
+    </div>
+
+    <div id="overview">
+
+        <h2>Напольные витрины</h2>
+
+        <div class="img">
+            <img src="item1.jpg" alt="">
+            <span>JOBS 0...+7°C от 74.000 ₽</span>
+        </div>
+        <div class="img">
+            <img src="item2.jpg" alt="">
+            <span>AIR +5...+10°C от 110.000 ₽</span>
+        </div>
+        <div class="img">
+            <img src="item3.jpg" alt="">
+            <span>EVA +2...+7°C от 64.000 ₽</span>
+        </div>
+    </div>
+
+    <div id="overview2">
+
+        <h2>Встраиваемые витрины</h2>
+        <div class="img">
+            <img src="item4.jpg" alt="">
+            <span>Glassier58 +5...+10°C от 99.000 ₽</span>
+        </div>
+        <div class="img">
+            <img src="item5.jpg" alt="">
+            <span>STEVE 0...+7°C от 115.000 ₽</span>
+        </div>
+        <div class="img">
+            <img src="item6.jpg" alt="">
+            <span>Glassier 812 +5...+10°C от 134.000 ₽</span>
+        </div>
+    </div>
+
+
+
+    <div id="questions">
+        <center>
+            <h5>Остались вопросы?</h5>
+            <h2>Проконсультируем</h2>
+        </center>
+        <form id='form_input'>
+            <label for="name">Имя <span>*</span></label><br>
+            <input type="text" placeholder="Введите имя" name="name" id="name" required pattern=^[А-Яа-яЁё\s]+$><br>
+            <label for="phone">Телефон <span>*</span></label><br>
+            <input type="phone" placeholder="Введите номер телефона" name="phone" id="phone" required pattern=[0-9]{11}><br>
+            <label for="message">Ваш вопрос <span>*</span></label><br>
+            <textarea placeholder="Что вас интересует" name="message" id="message"></textarea><br>
+            <button>Отправить</button>
+        </form>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate
+                ({
+                    scrollTop: $(id).offset().top
+                }, 500);
+
+        }
+
+
+        $(document).on('scroll', function () {
+            if ($(window).scrollTop() === 0)
+                $('header').removeClass('fixed')
+            else
+                $('header').attr('class', 'fixed');
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>
